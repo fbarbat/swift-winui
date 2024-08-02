@@ -14,6 +14,11 @@ fileprivate func makeIElementFactoryFrom(abi: WindowsFoundation.IInspectable) ->
     return __IMPL_Microsoft_UI_Xaml.IElementFactoryBridge.from(abi: RawPointer(swiftAbi))!
 }
 
+fileprivate func makeICommandBarElementFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    let swiftAbi: __ABI_Microsoft_UI_Xaml_Controls.ICommandBarElement = try! abi.QueryInterface()
+    return __IMPL_Microsoft_UI_Xaml_Controls.ICommandBarElementBridge.from(abi: RawPointer(swiftAbi))!
+}
+
 fileprivate func makeIInsertionPanelFrom(abi: WindowsFoundation.IInspectable) -> Any {
     let swiftAbi: __ABI_Microsoft_UI_Xaml_Controls.IInsertionPanel = try! abi.QueryInterface()
     return __IMPL_Microsoft_UI_Xaml_Controls.IInsertionPanelBridge.from(abi: RawPointer(swiftAbi))!
@@ -368,6 +373,10 @@ fileprivate func makeAppBarFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return AppBar(fromAbi: abi)
 }
 
+fileprivate func makeAppBarButtonFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return AppBarButton(fromAbi: abi)
+}
+
 fileprivate func makeAutoSuggestBoxFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return AutoSuggestBox(fromAbi: abi)
 }
@@ -432,6 +441,10 @@ fileprivate func makeComboBoxTextSubmittedEventArgsFrom(abi: WindowsFoundation.I
     return ComboBoxTextSubmittedEventArgs(fromAbi: abi)
 }
 
+fileprivate func makeCommandBarFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return CommandBar(fromAbi: abi)
+}
+
 fileprivate func makeContainerContentChangingEventArgsFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return ContainerContentChangingEventArgs(fromAbi: abi)
 }
@@ -494,6 +507,10 @@ fileprivate func makeDragItemsCompletedEventArgsFrom(abi: WindowsFoundation.IIns
 
 fileprivate func makeDragItemsStartingEventArgsFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return DragItemsStartingEventArgs(fromAbi: abi)
+}
+
+fileprivate func makeDynamicOverflowItemsChangingEventArgsFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return DynamicOverflowItemsChangingEventArgs(fromAbi: abi)
 }
 
 fileprivate func makeFlipViewFrom(abi: WindowsFoundation.IInspectable) -> Any {
@@ -1076,6 +1093,10 @@ fileprivate func makeXamlControlsResourcesFrom(abi: WindowsFoundation.IInspectab
     return XamlControlsResources(fromAbi: abi)
 }
 
+fileprivate func makeAppBarButtonTemplateSettingsFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return AppBarButtonTemplateSettings(fromAbi: abi)
+}
+
 fileprivate func makeAppBarTemplateSettingsFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return AppBarTemplateSettings(fromAbi: abi)
 }
@@ -1086,6 +1107,10 @@ fileprivate func makeButtonBaseFrom(abi: WindowsFoundation.IInspectable) -> Any 
 
 fileprivate func makeComboBoxTemplateSettingsFrom(abi: WindowsFoundation.IInspectable) -> Any {
     return ComboBoxTemplateSettings(fromAbi: abi)
+}
+
+fileprivate func makeCommandBarTemplateSettingsFrom(abi: WindowsFoundation.IInspectable) -> Any {
+    return CommandBarTemplateSettings(fromAbi: abi)
 }
 
 fileprivate func makeFlyoutBaseFrom(abi: WindowsFoundation.IInspectable) -> Any {
@@ -2014,6 +2039,7 @@ public class __MakeFromAbi: MakeFromAbi {
         switch typeName {
             case "IDataTemplateExtension": return makeIDataTemplateExtensionFrom(abi: abi)
             case "IElementFactory": return makeIElementFactoryFrom(abi: abi)
+            case "ICommandBarElement": return makeICommandBarElementFrom(abi: abi)
             case "IInsertionPanel": return makeIInsertionPanelFrom(abi: abi)
             case "IItemContainerMapping": return makeIItemContainerMappingFrom(abi: abi)
             case "IKeyIndexMapping": return makeIKeyIndexMappingFrom(abi: abi)
@@ -2097,6 +2123,7 @@ public class __MakeFromAbi: MakeFromAbi {
             case "IRawElementProviderSimple": return makeIRawElementProviderSimpleFrom(abi: abi)
             case "AnchorRequestedEventArgs": return makeAnchorRequestedEventArgsFrom(abi: abi)
             case "AppBar": return makeAppBarFrom(abi: abi)
+            case "AppBarButton": return makeAppBarButtonFrom(abi: abi)
             case "AutoSuggestBox": return makeAutoSuggestBoxFrom(abi: abi)
             case "AutoSuggestBoxQuerySubmittedEventArgs": return makeAutoSuggestBoxQuerySubmittedEventArgsFrom(abi: abi)
             case "AutoSuggestBoxSuggestionChosenEventArgs": return makeAutoSuggestBoxSuggestionChosenEventArgsFrom(abi: abi)
@@ -2113,6 +2140,7 @@ public class __MakeFromAbi: MakeFromAbi {
             case "ColumnDefinitionCollection": return makeColumnDefinitionCollectionFrom(abi: abi)
             case "ComboBox": return makeComboBoxFrom(abi: abi)
             case "ComboBoxTextSubmittedEventArgs": return makeComboBoxTextSubmittedEventArgsFrom(abi: abi)
+            case "CommandBar": return makeCommandBarFrom(abi: abi)
             case "ContainerContentChangingEventArgs": return makeContainerContentChangingEventArgsFrom(abi: abi)
             case "ContentControl": return makeContentControlFrom(abi: abi)
             case "ContentDialog": return makeContentDialogFrom(abi: abi)
@@ -2129,6 +2157,7 @@ public class __MakeFromAbi: MakeFromAbi {
             case "DataTemplateSelector": return makeDataTemplateSelectorFrom(abi: abi)
             case "DragItemsCompletedEventArgs": return makeDragItemsCompletedEventArgsFrom(abi: abi)
             case "DragItemsStartingEventArgs": return makeDragItemsStartingEventArgsFrom(abi: abi)
+            case "DynamicOverflowItemsChangingEventArgs": return makeDynamicOverflowItemsChangingEventArgsFrom(abi: abi)
             case "FlipView": return makeFlipViewFrom(abi: abi)
             case "FlipViewItem": return makeFlipViewItemFrom(abi: abi)
             case "Flyout": return makeFlyoutFrom(abi: abi)
@@ -2274,9 +2303,11 @@ public class __MakeFromAbi: MakeFromAbi {
             case "VirtualizingLayout": return makeVirtualizingLayoutFrom(abi: abi)
             case "VirtualizingLayoutContext": return makeVirtualizingLayoutContextFrom(abi: abi)
             case "XamlControlsResources": return makeXamlControlsResourcesFrom(abi: abi)
+            case "AppBarButtonTemplateSettings": return makeAppBarButtonTemplateSettingsFrom(abi: abi)
             case "AppBarTemplateSettings": return makeAppBarTemplateSettingsFrom(abi: abi)
             case "ButtonBase": return makeButtonBaseFrom(abi: abi)
             case "ComboBoxTemplateSettings": return makeComboBoxTemplateSettingsFrom(abi: abi)
+            case "CommandBarTemplateSettings": return makeCommandBarTemplateSettingsFrom(abi: abi)
             case "FlyoutBase": return makeFlyoutBaseFrom(abi: abi)
             case "FlyoutBaseClosingEventArgs": return makeFlyoutBaseClosingEventArgsFrom(abi: abi)
             case "FlyoutShowOptions": return makeFlyoutShowOptionsFrom(abi: abi)

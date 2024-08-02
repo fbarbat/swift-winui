@@ -9,6 +9,10 @@ private var IID___x_ABI_CMicrosoft_CUI_CXaml_CHosting_CIDesktopWindowXamlSource:
     .init(Data1: 0x553AF92C, Data2: 0x1381, Data3: 0x51D6, Data4: ( 0xBE,0xE0,0xF3,0x4B,0xEB,0x04,0x2E,0xA8 ))// 553AF92C-1381-51D6-BEE0-F34BEB042EA8
 }
 
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CHosting_CIDesktopWindowXamlSource2: WindowsFoundation.IID {
+    .init(Data1: 0xFB02B9F1, Data2: 0x8588, Data3: 0x5BD3, Data4: ( 0x89,0x51,0x46,0x64,0xA6,0x75,0xD8,0x72 ))// FB02B9F1-8588-5BD3-8951-4664A675D872
+}
+
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CHosting_CIDesktopWindowXamlSourceFactory: WindowsFoundation.IID {
     .init(Data1: 0x7D2DB617, Data2: 0x14E7, Data3: 0x5D49, Data4: ( 0xAE,0xEC,0xAE,0x10,0x88,0x7E,0x59,0x5D ))// 7D2DB617-14E7-5D49-AEEC-AE10887E595D
 }

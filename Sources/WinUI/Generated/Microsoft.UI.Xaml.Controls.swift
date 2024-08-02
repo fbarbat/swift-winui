@@ -20,6 +20,14 @@ public typealias CharacterCasing = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CChara
 public typealias ClickMode = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CClickMode
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.comboboxselectionchangedtrigger)
 public typealias ComboBoxSelectionChangedTrigger = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CComboBoxSelectionChangedTrigger
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbardefaultlabelposition)
+public typealias CommandBarDefaultLabelPosition = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCommandBarDefaultLabelPosition
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbardynamicoverflowaction)
+public typealias CommandBarDynamicOverflowAction = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCommandBarDynamicOverflowAction
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbarlabelposition)
+public typealias CommandBarLabelPosition = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCommandBarLabelPosition
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbaroverflowbuttonvisibility)
+public typealias CommandBarOverflowButtonVisibility = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCommandBarOverflowButtonVisibility
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialogbutton)
 public typealias ContentDialogButton = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CContentDialogButton
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialogplacement)
@@ -340,6 +348,148 @@ open class AppBar : WinUI.ContentControl {
     deinit {
         _default = nil
         _IAppBarOverrides = nil
+    }
+}
+
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton)
+open class AppBarButton : WinUI.Button, ICommandBarElement {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IAppBarButton
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIAppBarButton
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override open func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CIAppBarButton>?) -> AppBarButton? {
+        guard let abi = abi else { return nil }
+        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi: fromAbi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init<Composable: ComposableImpl>(
+        composing: Composable.Type,
+        _ createCallback: (UnsealedWinRTClassWrapper<Composable>?, inout WindowsFoundation.IInspectable?) -> Composable.Default.SwiftABI)
+    {
+        super.init(composing: composing, createCallback)
+    }
+    override open func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? {
+        return super.queryInterface(iid)
+    }
+    private static var _IAppBarButtonFactory : __ABI_Microsoft_UI_Xaml_Controls.IAppBarButtonFactory =  try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.AppBarButton"))
+
+    override public init() {
+        super.init(composing: Self.Composable.self) { baseInterface, innerInterface in 
+            try! Self._IAppBarButtonFactory.CreateInstanceImpl(baseInterface, &innerInterface)
+        }
+    }
+
+    private static let _IAppBarButtonStatics: __ABI_Microsoft_UI_Xaml_Controls.IAppBarButtonStatics = try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.AppBarButton"))
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton.dynamicoverfloworderproperty)
+    public class var dynamicOverflowOrderProperty : WinUI.DependencyProperty! {
+        get { try! _IAppBarButtonStatics.get_DynamicOverflowOrderPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton.iconproperty)
+    public class var iconProperty : WinUI.DependencyProperty! {
+        get { try! _IAppBarButtonStatics.get_IconPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton.iscompactproperty)
+    public class var isCompactProperty : WinUI.DependencyProperty! {
+        get { try! _IAppBarButtonStatics.get_IsCompactPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton.isinoverflowproperty)
+    public class var isInOverflowProperty : WinUI.DependencyProperty! {
+        get { try! _IAppBarButtonStatics.get_IsInOverflowPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton.keyboardacceleratortextoverrideproperty)
+    public class var keyboardAcceleratorTextOverrideProperty : WinUI.DependencyProperty! {
+        get { try! _IAppBarButtonStatics.get_KeyboardAcceleratorTextOverridePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton.labelpositionproperty)
+    public class var labelPositionProperty : WinUI.DependencyProperty! {
+        get { try! _IAppBarButtonStatics.get_LabelPositionPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton.labelproperty)
+    public class var labelProperty : WinUI.DependencyProperty! {
+        get { try! _IAppBarButtonStatics.get_LabelPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton.icon)
+    public var icon : IconElement! {
+        get { try! _default.get_IconImpl() }
+        set { try! _default.put_IconImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton.keyboardacceleratortextoverride)
+    public var keyboardAcceleratorTextOverride : String {
+        get { try! _default.get_KeyboardAcceleratorTextOverrideImpl() }
+        set { try! _default.put_KeyboardAcceleratorTextOverrideImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton.label)
+    public var label : String {
+        get { try! _default.get_LabelImpl() }
+        set { try! _default.put_LabelImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton.labelposition)
+    public var labelPosition : CommandBarLabelPosition {
+        get { try! _default.get_LabelPositionImpl() }
+        set { try! _default.put_LabelPositionImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton.templatesettings)
+    public var templateSettings : WinUI.AppBarButtonTemplateSettings! {
+        get { try! _default.get_TemplateSettingsImpl() }
+    }
+
+    private lazy var _ICommandBarElement: __ABI_Microsoft_UI_Xaml_Controls.ICommandBarElement! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton.dynamicoverfloworder)
+    public var dynamicOverflowOrder : Int32 {
+        get { try! _ICommandBarElement.get_DynamicOverflowOrderImpl() }
+        set { try! _ICommandBarElement.put_DynamicOverflowOrderImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton.iscompact)
+    public var isCompact : Bool {
+        get { try! _ICommandBarElement.get_IsCompactImpl() }
+        set { try! _ICommandBarElement.put_IsCompactImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton.isinoverflow)
+    public var isInOverflow : Bool {
+        get { try! _ICommandBarElement.get_IsInOverflowImpl() }
+    }
+
+    internal enum IContentControlOverrides : ComposableImpl {
+        internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIContentControlOverrides
+        internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IContentControlOverrides
+        internal typealias Class = AppBarButton
+        internal typealias SwiftProjection = WinRTClassWeakReference<Class>
+        internal enum Default : AbiInterface {
+            internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIAppBarButton
+            internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IAppBarButton
+        }
+    }
+    internal typealias Composable = IContentControlOverrides
+    deinit {
+        _default = nil
+        _ICommandBarElement = nil
     }
 }
 
@@ -1781,6 +1931,147 @@ public final class ComboBoxTextSubmittedEventArgs : WinRTClass {
         get { try! _default.get_TextImpl() }
     }
 
+    deinit {
+        _default = nil
+    }
+}
+
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar)
+open class CommandBar : WinUI.AppBar {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.ICommandBar
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CICommandBar
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override open func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CICommandBar>?) -> CommandBar? {
+        guard let abi = abi else { return nil }
+        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi: fromAbi)
+    }
+
+    @_spi(WinRTInternal)
+    override public init<Composable: ComposableImpl>(
+        composing: Composable.Type,
+        _ createCallback: (UnsealedWinRTClassWrapper<Composable>?, inout WindowsFoundation.IInspectable?) -> Composable.Default.SwiftABI)
+    {
+        super.init(composing: composing, createCallback)
+    }
+    override open func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? {
+        return super.queryInterface(iid)
+    }
+    private static var _ICommandBarFactory : __ABI_Microsoft_UI_Xaml_Controls.ICommandBarFactory =  try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.CommandBar"))
+
+    override public init() {
+        super.init(composing: Self.Composable.self) { baseInterface, innerInterface in 
+            try! Self._ICommandBarFactory.CreateInstanceImpl(baseInterface, &innerInterface)
+        }
+    }
+
+    private static let _ICommandBarStatics: __ABI_Microsoft_UI_Xaml_Controls.ICommandBarStatics = try! RoGetActivationFactory(HString("Microsoft.UI.Xaml.Controls.CommandBar"))
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.commandbaroverflowpresenterstyleproperty)
+    public class var commandBarOverflowPresenterStyleProperty : WinUI.DependencyProperty! {
+        get { try! _ICommandBarStatics.get_CommandBarOverflowPresenterStylePropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.defaultlabelpositionproperty)
+    public class var defaultLabelPositionProperty : WinUI.DependencyProperty! {
+        get { try! _ICommandBarStatics.get_DefaultLabelPositionPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.isdynamicoverflowenabledproperty)
+    public class var isDynamicOverflowEnabledProperty : WinUI.DependencyProperty! {
+        get { try! _ICommandBarStatics.get_IsDynamicOverflowEnabledPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.overflowbuttonvisibilityproperty)
+    public class var overflowButtonVisibilityProperty : WinUI.DependencyProperty! {
+        get { try! _ICommandBarStatics.get_OverflowButtonVisibilityPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.primarycommandsproperty)
+    public class var primaryCommandsProperty : WinUI.DependencyProperty! {
+        get { try! _ICommandBarStatics.get_PrimaryCommandsPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.secondarycommandsproperty)
+    public class var secondaryCommandsProperty : WinUI.DependencyProperty! {
+        get { try! _ICommandBarStatics.get_SecondaryCommandsPropertyImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.commandbaroverflowpresenterstyle)
+    public var commandBarOverflowPresenterStyle : WinUI.Style! {
+        get { try! _default.get_CommandBarOverflowPresenterStyleImpl() }
+        set { try! _default.put_CommandBarOverflowPresenterStyleImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.commandbartemplatesettings)
+    public var commandBarTemplateSettings : WinUI.CommandBarTemplateSettings! {
+        get { try! _default.get_CommandBarTemplateSettingsImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.defaultlabelposition)
+    public var defaultLabelPosition : CommandBarDefaultLabelPosition {
+        get { try! _default.get_DefaultLabelPositionImpl() }
+        set { try! _default.put_DefaultLabelPositionImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.isdynamicoverflowenabled)
+    public var isDynamicOverflowEnabled : Bool {
+        get { try! _default.get_IsDynamicOverflowEnabledImpl() }
+        set { try! _default.put_IsDynamicOverflowEnabledImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.overflowbuttonvisibility)
+    public var overflowButtonVisibility : CommandBarOverflowButtonVisibility {
+        get { try! _default.get_OverflowButtonVisibilityImpl() }
+        set { try! _default.put_OverflowButtonVisibilityImpl(newValue) }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.primarycommands)
+    public var primaryCommands : WindowsFoundation.AnyIObservableVector<AnyICommandBarElement?>! {
+        get { try! _default.get_PrimaryCommandsImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.secondarycommands)
+    public var secondaryCommands : WindowsFoundation.AnyIObservableVector<AnyICommandBarElement?>! {
+        get { try! _default.get_SecondaryCommandsImpl() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.dynamicoverflowitemschanging)
+    public lazy var dynamicOverflowItemsChanging : Event<TypedEventHandler<CommandBar?, DynamicOverflowItemsChangingEventArgs?>> = {
+      .init(
+        add: { [weak self] in
+          guard let this = self?._default else { return .init() }
+          return try! this.add_DynamicOverflowItemsChangingImpl($0)
+        },
+        remove: { [weak self] in
+         try? self?._default.remove_DynamicOverflowItemsChangingImpl($0)
+       }
+      )
+    }()
+
+    internal enum IAppBarOverrides : ComposableImpl {
+        internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIAppBarOverrides
+        internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IAppBarOverrides
+        internal typealias Class = CommandBar
+        internal typealias SwiftProjection = WinRTClassWeakReference<Class>
+        internal enum Default : AbiInterface {
+            internal typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CICommandBar
+            internal typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.ICommandBar
+        }
+    }
+    internal typealias Composable = IAppBarOverrides
     deinit {
         _default = nil
     }
@@ -3755,6 +4046,44 @@ public final class DragItemsStartingEventArgs : WinRTClass {
     /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.dragitemsstartingeventargs.items)
     public var items : WindowsFoundation.AnyIVector<Any?>! {
         get { try! _default.get_ItemsImpl() }
+    }
+
+    deinit {
+        _default = nil
+    }
+}
+
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.dynamicoverflowitemschangingeventargs)
+public final class DynamicOverflowItemsChangingEventArgs : WinRTClass {
+    private typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IDynamicOverflowItemsChangingEventArgs
+    private typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIDynamicOverflowItemsChangingEventArgs
+    private lazy var _default: SwiftABI! = getInterfaceForCaching()
+    @_spi(WinRTInternal)
+    override public func _getABI<T>() -> UnsafeMutablePointer<T>? {
+        if T.self == CABI.self {
+            return RawPointer(_default)
+        }
+        return super._getABI()
+    }
+
+    @_spi(WinRTInternal)
+    public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CIDynamicOverflowItemsChangingEventArgs>?) -> DynamicOverflowItemsChangingEventArgs? {
+        guard let abi = abi else { return nil }
+        return .init(fromAbi: WindowsFoundation.IInspectable(abi))
+    }
+
+    @_spi(WinRTInternal)
+    public init(fromAbi: WindowsFoundation.IInspectable) {
+        super.init(fromAbi)
+    }
+
+    override public init() {
+        super.init(try! RoActivateInstance(HString("Microsoft.UI.Xaml.Controls.DynamicOverflowItemsChangingEventArgs")))
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.dynamicoverflowitemschangingeventargs.action)
+    public var action : CommandBarDynamicOverflowAction {
+        get { try! _default.get_ActionImpl() }
     }
 
     deinit {
@@ -19724,6 +20053,28 @@ public typealias SelectionChangedEventHandler = (Any?, SelectionChangedEventArgs
 public typealias SemanticZoomViewChangedEventHandler = (Any?, SemanticZoomViewChangedEventArgs?) -> ()
 public typealias TextChangedEventHandler = (Any?, TextChangedEventArgs?) -> ()
 public typealias TextControlPasteEventHandler = (Any?, TextControlPasteEventArgs?) -> ()
+/// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.icommandbarelement)
+public protocol ICommandBarElement : WinRTInterface {
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.icommandbarelement.dynamicoverfloworder)
+    var dynamicOverflowOrder: Int32 { get set }
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.icommandbarelement.iscompact)
+    var isCompact: Bool { get set }
+    /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.icommandbarelement.isinoverflow)
+    var isInOverflow: Bool { get }
+}
+
+extension ICommandBarElement {
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? {
+        switch iid {
+            case __ABI_Microsoft_UI_Xaml_Controls.ICommandBarElementWrapper.IID:
+                let wrapper = __ABI_Microsoft_UI_Xaml_Controls.ICommandBarElementWrapper(self)
+                return wrapper!.queryInterface(iid)
+            default: return nil
+        }
+    }
+}
+public typealias AnyICommandBarElement = any ICommandBarElement
+
 /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iinsertionpanel)
 public protocol IInsertionPanel : WinRTInterface {
     /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iinsertionpanel.getinsertionindexes)
@@ -19943,6 +20294,52 @@ extension WinUI.ComboBoxSelectionChangedTrigger {
     }
 }
 extension WinUI.ComboBoxSelectionChangedTrigger: @retroactive Hashable, @retroactive Codable {}
+
+extension WinUI.CommandBarDefaultLabelPosition {
+    public static var bottom : WinUI.CommandBarDefaultLabelPosition {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCommandBarDefaultLabelPosition_Bottom
+    }
+    public static var right : WinUI.CommandBarDefaultLabelPosition {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCommandBarDefaultLabelPosition_Right
+    }
+    public static var collapsed : WinUI.CommandBarDefaultLabelPosition {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCommandBarDefaultLabelPosition_Collapsed
+    }
+}
+extension WinUI.CommandBarDefaultLabelPosition: @retroactive Hashable, @retroactive Codable {}
+
+extension WinUI.CommandBarDynamicOverflowAction {
+    public static var addingToOverflow : WinUI.CommandBarDynamicOverflowAction {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCommandBarDynamicOverflowAction_AddingToOverflow
+    }
+    public static var removingFromOverflow : WinUI.CommandBarDynamicOverflowAction {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCommandBarDynamicOverflowAction_RemovingFromOverflow
+    }
+}
+extension WinUI.CommandBarDynamicOverflowAction: @retroactive Hashable, @retroactive Codable {}
+
+extension WinUI.CommandBarLabelPosition {
+    public static var `default` : WinUI.CommandBarLabelPosition {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCommandBarLabelPosition_Default
+    }
+    public static var collapsed : WinUI.CommandBarLabelPosition {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCommandBarLabelPosition_Collapsed
+    }
+}
+extension WinUI.CommandBarLabelPosition: @retroactive Hashable, @retroactive Codable {}
+
+extension WinUI.CommandBarOverflowButtonVisibility {
+    public static var auto : WinUI.CommandBarOverflowButtonVisibility {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCommandBarOverflowButtonVisibility_Auto
+    }
+    public static var visible : WinUI.CommandBarOverflowButtonVisibility {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCommandBarOverflowButtonVisibility_Visible
+    }
+    public static var collapsed : WinUI.CommandBarOverflowButtonVisibility {
+        __x_ABI_CMicrosoft_CUI_CXaml_CControls_CCommandBarOverflowButtonVisibility_Collapsed
+    }
+}
+extension WinUI.CommandBarOverflowButtonVisibility: @retroactive Hashable, @retroactive Codable {}
 
 extension WinUI.ContentDialogButton {
     public static var none : WinUI.ContentDialogButton {
